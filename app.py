@@ -1,10 +1,16 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Load the CSV file into a DataFrame
-df = pd.read_csv('/home/sunail/Downloads/count_table_for_deseq_example (copy).csv')
+# Generate dummy data
+data = {
+    'A': np.random.randn(100),
+    'B': np.random.rand(100) * 100,
+    'C': np.random.choice(['X', 'Y', 'Z'], 100),
+}
+df = pd.DataFrame(data)
 
 # Display the first few rows of the DataFrame
 st.write("First few rows of the DataFrame:")
